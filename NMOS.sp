@@ -8,14 +8,14 @@ Vds Vdd Vss DC 1.2V
 Vss Vss 0 0
 
 * Simulation settings
-.options Temp=27.0
+*.options Temp=27.0
 
 .control
-let w_var = 0.36u
-repeat 11
-  alter @M1[w] = $&w_var
+let tempch = 10
+repeat 10
+  option Temp = $&tempch
   dc Vds 0 1.2 0.05
-  let w_var = w_var + 0.36u
+  let tempch = tempch + 10
 end
 plot dc1.i(Vds) dc5.i(Vds) dc10.i(Vds) ylabel 'Ids' xlabel 'Vds'
 .endc
