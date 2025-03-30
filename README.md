@@ -7,3 +7,5 @@ The exercises include designing and analyzing transistors in CMOS technology at 
 This repository contains scripts, documentation, simulation results, and various analyses that help to explore the production and optimization of electronic circuits using the latest technologies.
 
 Simulations are being performed using the nqSpice environment.
+
+### because of my lazyness, often different simulaions were performed on the same file, to see what was done, look at commits histor
