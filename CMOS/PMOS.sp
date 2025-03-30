@@ -9,7 +9,7 @@ Vss Vss 0 0
 .options Temp=27.0
 .control
 
-DC Vds -1.2V 0V 0.02V
+DC Vds -1.2V 0V 0.02V Vgs -1.2V 0V 0.3V
 plot Vds#branch ylabel 'Drain current'
 .endc
 .meas dc result AVG Vds#branch from=-1.2 to=0
