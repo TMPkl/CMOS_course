@@ -1,15 +1,19 @@
-* MOS device
+* PMOS DC Sweep Simulation
+
 .include psp102_pmos.mod
+
 M1 Vdd Vg Vss Vss PCH L=65n W=200n
-* Source
+
 Vgs Vg Vss DC -1V
 Vds Vdd Vss DC -1.2V
 Vss Vss 0 0
-* simuulation
-.options Temp=27.0
-.control
 
-DC Vds -1.2V 0V 0.02V Vgs -1.2V 0V 0.3V
-plot Vds#branch ylabel 'Drain current'
+.options TEMP=27.0
+
+.control
+DC Vgs -1.2 0 0.02
+plot -I(Vds) ylabel 'Drain Current (A)'
 .endc
-.meas dc result AVG Vds#branch from=-1.2 to=0
+
+* Measure average drain current over sweep
+.end
