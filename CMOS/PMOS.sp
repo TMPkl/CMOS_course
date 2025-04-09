@@ -9,12 +9,12 @@ Vss Vss 0 0
 .options TEMP=27.0
 
 .control
-let w_var = 0.36u
-repeat 11
-  alter @M1[w] = $&w_var
+let tempch = 10
+repeat 10
+  option Temp = $&tempch
   dc Vsd 0 1.2 0.05
-  let w_var = w_var + 0.36u
+  let tempch = tempch + 10
 end
-
-plot dc1.i(Vsd) dc6.i(Vsd) dc11.i(Vsd) ylabel 'Drain Current (A)' xlabel 'Vds (V)'
+plot dc1.i(Vsd) dc5.i(Vsd) dc10.i(Vsd) ylabel 'Ids' xlabel 'Vds'
 .endc
+.end
